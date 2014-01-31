@@ -74,12 +74,16 @@ class AQ_Column_Block extends AQ_Block {
 					global $aq_registered_blocks;
 					extract($child);
 					
-					//get the block object
-					$block = $aq_registered_blocks[$id_base];
-					
-					if($parent == $col_order) {
-						$block->form_callback($child);
-					}
+                                        if(isset($aq_registered_blocks[$id_base])) {
+                                            
+                                                //get the block object
+                                                $block = $aq_registered_blocks[$id_base];
+
+                                                if($parent == $col_order) {
+                                                        $block->form_callback($child);
+                                                }
+                                            
+                                        }
 				}
 			} 
 			echo 		'</ul>';

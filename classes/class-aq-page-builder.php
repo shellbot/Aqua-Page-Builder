@@ -511,7 +511,7 @@ if(!class_exists('AQ_Page_Builder')) {
 					global $aq_registered_blocks;
 					extract($instance);
 					
-					if(class_exists($id_base)) {
+					if(class_exists($id_base) && isset($aq_registered_blocks[$id_base])) {
 						//get the block object
 						$block = $aq_registered_blocks[$id_base];
 						
